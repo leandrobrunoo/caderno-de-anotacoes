@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Caderno de anotações</title>
+  </head>
+  <body>
+    <header>
+      <h1>CADERNO DE ANOTAÇÕES</h1>
+    </header>
+    <main>
+      <nav>
+        <a href="#modal">
+          <i class="fa fa-tasks"></i>
+          Adicionar
+        </a>
+      </nav>
+      <section>
+        <div class="card">
+          <div class="header">
+            <h2><i class="fa fa-cubes"></i> SPRINT 11</h2>
+            <small>10/11/2021 / 25/11/2021</small>
+          </div>
+          <div class="body">
+            <button>
+              <i class="fa fa-calendar"></i>
+              10/10/2021
+            </button>
+            <ul>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                ac pulvinar venenatis arcu scelerisque semper orci risus. Urna
+                et, fermentum tellus eget.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                ac pulvinar venenatis arcu scelerisque semper orci risus. Urna
+                et, fermentum tellus eget. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Donec ac pulvinar venenatis arcu
+                scelerisque semper orci risus. Urna et, fermentum tellus eget.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>
+        <i class="fa fa-copyright"></i>
+        Versão 1.0.0
+      </small>
+      <q>Dados são salvo em localStorage.</q>
+    </footer>
+
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <button>
+            <i class="fa fa-calendar"></i>
+            10/11/2021
+          </button>
+          <a href="#" class="modal-closed">
+            <img src="./assets/icon-close.svg" alt="Icone de fechar o modal" />
+          </a>
+        </div>
+
+        <div class="divisor"></div>
+        <div class="modal-body">
+          <label for="oqueFez">Oque você fez?</label>
+          <textarea name="oqueFez" id="oqueFez" cols="30" rows="10"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button class="green">Salvar</button>
+          <a class="modal-closed" href="#"> Fechar </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
