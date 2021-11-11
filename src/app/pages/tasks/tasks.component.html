@@ -1,0 +1,66 @@
+<section>
+  <div class="card">
+    <div class="header">
+      <h2>SPRINT 11</h2>
+      <small>10/11/2021 / 25/11/2021</small>
+    </div>
+    <div class="body" *ngFor="let task of tasks">
+      <button>
+        <i class="fa fa-calendar"></i>
+        {{ task.data }}
+      </button>
+      <ul>
+        <li *ngFor="let item of task.descricoes">
+          <p><i class="fa fa-check"></i> {{ item }}</p>
+          <i class="fa fa-trash"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <button>
+        <i class="fa fa-calendar"></i>
+        {{ storageService.getDay() }}
+      </button>
+      <a href="#" class="modal-closed">
+        <img src="./assets/icon-close.svg" alt="Icone de fechar o modal" />
+      </a>
+    </div>
+
+    <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+      <div class="divisor"></div>
+      <div class="modal-body">
+        <label for="oqueFez">Oque você fez?</label>
+        <textarea
+          name="descricao"
+          formControlName="descricao"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <small *ngIf="temErro(formulario.get('descricao'), 'tamanhoMinimo')"
+          >Mínimo de
+          {{ formulario.get("descricao").errors?.tamanhoMinimo?.tamanho }}
+          caracteres</small
+        >
+
+        <small *ngIf="temErro(formulario.get('descricao'), 'obrigatoriedade')"
+          >Descrição obrigatoria.</small
+        >
+      </div>
+      <div class="modal-footer">
+        <button
+          type="submit"
+          class="green modal-closed"
+          [disabled]="formulario.invalid"
+        >
+          Salvar
+        </button>
+        <a class="modal-closed" href="#">Fechar </a>
+      </div>
+    </form>
+  </div>
+</div>
