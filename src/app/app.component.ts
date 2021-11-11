@@ -1,4 +1,4 @@
-import { StorageService } from './shared/storage.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'web-caderno-anotacoes';
 
-  constructor(storageService: StorageService) {
+  constructor() {
 
   }
 

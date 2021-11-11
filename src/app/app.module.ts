@@ -1,5 +1,4 @@
 import { PagesModule } from './pages/pages.module';
-import { TasksComponent } from './pages/tasks/tasks.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 

@@ -41,15 +41,19 @@
           cols="30"
           rows="10"
         ></textarea>
-        <small *ngIf="temErro(formulario.get('descricao'), 'tamanhoMinimo')"
-          >Mínimo de
-          {{ formulario.get("descricao").errors?.tamanhoMinimo?.tamanho }}
-          caracteres</small
-        >
 
-        <small *ngIf="temErro(formulario.get('descricao'), 'obrigatoriedade')"
-          >Descrição obrigatoria.</small
-        >
+        <app-message
+          [control]="formulario.get('descricao')"
+          error="obrigatoriedade"
+          text="Informe uma descrição"
+        ></app-message>
+        <app-message
+          [control]="formulario.get('descricao')"
+          error="tamanhoMinimo"
+          text="Mínimo de {{
+            formulario.get('descricao').errors?.tamanhoMinimo?.tamanho
+          }} caracteres"
+        ></app-message>
       </div>
       <div class="modal-footer">
         <button
